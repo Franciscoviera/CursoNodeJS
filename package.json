@@ -1,0 +1,25 @@
+{
+  "name": "curso-node-js",
+  "version": "1.0.0",
+  "description": "Curso de miduDev de NodeJS",
+  "keywords": [
+    "curso",
+    "node",
+    "nodejs"
+  ],
+  "homepage": "https://github.com/Franciscoviera/CursoNodeJS#readme",
+  "bugs": {
+    "url": "https://github.com/Franciscoviera/CursoNodeJS/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Franciscoviera/CursoNodeJS.git"
+  },
+  "license": "ISC",
+  "author": "Francisco Viera",
+  "type": "module",
+  "main": "00-ServidorHttp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
