@@ -1,0 +1,86 @@
+### Inicio
+GET http://localhost:1234/
+
+### Productos
+GET http://localhost:1234/products
+
+### Producto por Id Valido
+GET http://localhost:1234/products/10
+
+### Producto por Id Negativo
+GET http://localhost:1234/products/-4
+
+### Producto por Id con decimal
+GET http://localhost:1234/products/1.5
+
+### Producto por Id con letras
+GET http://localhost:1234/products/asd10
+
+### Agrega Producto
+POST http://localhost:1234/products
+Content-Type: application/json
+
+{
+    "name": "Nuevo Producto",
+    "price": 9999,
+    "category": "notebooks",
+    "stock": 10
+}
+
+### chequea el post (al haber hecho mas de uno hay q actualizar el id q se busca)
+
+GET http://localhost:1234/products/51
+
+### Actualiza Producto
+
+PUT http://localhost:1234/products/1
+Content-Type: application/json
+
+{
+    "name": "Producto Actualizado",
+    "price": 5555,
+    "category": "Categoria Actualizada",
+    "stock": 150
+}
+
+### Actualiza Producto sin todos los campos
+
+PUT http://localhost:1234/products/1
+Content-Type: application/json
+
+{
+    "name": "Producto Actualizado",
+    "category": "Categoria Actualizada",
+    "stock": 150
+}
+
+### Actualiza Producto con Id Invalido
+PUT http://localhost:1234/products/9999
+
+### Elimina un Producto 
+DELETE http://localhost:1234/products/50
+
+
+### Elimina Producto por Id Negativo
+DELETE  http://localhost:1234/products/-4
+
+### Elimina Producto por Id con decimal
+DELETE http://localhost:1234/products/1.5
+
+### Elimina Producto por Id con letras
+DELETE http://localhost:1234/products/asd10
+
+### Filtra por Categoria
+GET http://localhost:1234/products?category=notebooks
+
+### Filtra por Categoria con mayus
+GET http://localhost:1234/products?category=noteBooKs
+
+### Filtra por Categoria Inexistente
+GET http://localhost:1234/products?category=aaa
+
+### Filtra por Categoria sin valor
+GET http://localhost:1234/products?category
+
+### Filtra por Categoria con numero
+GET http://localhost:1234/products?category=10

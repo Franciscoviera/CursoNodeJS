@@ -1,0 +1,14 @@
+### Home
+GET http://localhost:3000/
+
+### About
+GET http://localhost:3000/about
+
+### API
+GET http://localhost:3000/api
+
+### Ruta inexistente
+GET http://localhost:3000/no-existe
+
+### Método incorrecto
+POST http://localhost:3000/about

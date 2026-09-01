@@ -1,0 +1,23 @@
+### Home
+GET http://localhost:1234/
+
+### Todos los libros (### es un separador necesario entre reqs)
+GET http://localhost:1234/books
+
+### Libro por id
+GET http://localhost:1234/books/10
+
+### Id con decimal
+GET http://localhost:1234/books/1.5
+
+### Id no numerico
+GET http://localhost:1234/books/asda
+
+### Saludo
+GET http://localhost:1234/hello?name=Fran
+
+### Saludo sin query
+GET http://localhost:1234/hello
+
+### Saludo con Nombre Vacio
+GET http://localhost:1234/hello?name=
