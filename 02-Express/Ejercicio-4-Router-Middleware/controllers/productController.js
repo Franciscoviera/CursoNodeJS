@@ -45,15 +45,12 @@ export class ProductController {
         const prodActualizado = req.body
         if( !Number.isInteger(idProd) || idProd <= 0)
             return res.status(400).json({ error: "Id de Producto Invalido" })
-
-        const indiceProdViejo = await ProductModel.obtenerIndice(idProd)
-        if(indiceProdViejo  === -1 )
-            return res.status(404).json({ error: "Producto No Encontrado" })
-
         prodActualizado.id = idProd
-        const actualizacion = await ProductModel.actualizarProducto(prodActualizado, indiceProdViejo)
-        if(!actualizacion)
+        const actualizacion = await ProductModel.actualizarProducto(prodActualizado)
+        if(actualizacion === 0)
             return res.status(400).json("Faltan Campos Obligatorios")
+        if(actualizacion === -1)
+            return res.status(404).json({ error: "Producto No Encontrado" })
 
         return res.status(200).json(prodActualizado)
     }

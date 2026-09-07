@@ -24,17 +24,21 @@ export class ProductModel{
         return nuevoProd
     }
 
-    static async actualizarProducto(prodActualizado, indiceProdViejo){
-        const campos = ["name", "price", "category", "stock"] //cambiar por products.keys??
-        const tieneTodos = campos.every(campo =>  Object.keys(prodActualizado).includes(campo))
-        if(!tieneTodos)
-            return false
-        products[indiceProdViejo] = prodActualizado
-        return true
-    }
-
     static async obtenerIndice(id){
         return products.findIndex((producto) => producto.id === id)
+    }
+
+    static async actualizarProducto(prodActualizado){
+        const indiceProdViejo = await this.obtenerIndice(prodActualizado.id)
+        if(indiceProdViejo  === -1 )
+            return -1
+
+        const campos = ["name", "price", "category", "stock"] //cambiar por products.keys??
+        const tieneTodos = campos.every(campo =>  campo in prodActualizado)
+        if(!tieneTodos)
+            return 0
+        products[indiceProdViejo] = prodActualizado
+        return 1
     }
 
     static async eliminarPorId(id){
