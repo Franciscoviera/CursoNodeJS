@@ -1,7 +1,57 @@
-import { app } from "./server.js"
+// EJERCICIO 4 — Router y Middleware
+//
+// Tomá el ejercicio anterior y refactorizalo para separar
+// las responsabilidades de la aplicación.
+//
+// Organizá el proyecto utilizando módulos separados para:
+// - aplicación
+// - rutas
+// - controladores
+// - datos
+//
+// Creá un Router específico para las rutas de productos.
+//
+// Además, creá un middleware que registre cada request con:
+// - fecha y hora
+// - método HTTP
+// - URL solicitada
+//
+// Ejemplo:
+// [2026-08-30 22:15:32] GET /products
+//
+// Creá también un middleware que agregue a las respuestas el header:
+// X-API-Version: 1.0
+//
+// El objetivo es entender el flujo:
+//
+// Request
+//   ↓
+// Middleware
+//   ↓
+// Router
+//   ↓
+// Controller
+//   ↓
+// Response
+//
+// Y practicar:
+// - app.use()
+// - express.Router()
+// - middleware
+// - separación de módulos
+// - import/export
 
-process.loadEnvFile()
-const port = process.env.PORT ?? 0
-app.listen(port, () =>{
-    console.log(`Servidor levantado en http://localhost:${port}`)
-})
+import express from "express"
+import { productsRouter } from "./routes/productRoutes.js"
+import { ProductController } from "./controllers/productController.js"
+import { apiVersion, datosRequest } from "./middlewares/datosRequest.js"
+
+export const app = express()
+//MIDDLEWARES
+app.disable("x-powered-by")
+app.use(express.json())
+app.use(datosRequest)
+app.use(apiVersion)
+
+app.get("/", ProductController.paginaInicio)
+app.use("/products", productsRouter)
