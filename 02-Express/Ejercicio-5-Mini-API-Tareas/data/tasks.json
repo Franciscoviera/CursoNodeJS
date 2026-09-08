@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "Estudiar Node.js",
+    "description": "Repasar módulos, fs y asincronía",
+    "completed": false,
+    "priority": "high"
+  },
+  {
+    "id": 2,
+    "title": "Practicar Express",
+    "description": "Crear rutas y middlewares",
+    "completed": false,
+    "priority": "high"
+  },
+  {
+    "id": 3,
+    "title": "Leer documentación de Fetch",
+    "description": "Repasar Request, Response y métodos HTTP",
+    "completed": true,
+    "priority": "medium"
+  },
+  {
+    "id": 4,
+    "title": "Organizar el proyecto",
+    "description": "Separar rutas, controladores y middlewares",
+    "completed": true,
+    "priority": "low"
+  },
+  {
+    "id": 5,
+    "title": "Implementar GET /tasks",
+    "description": "Devolver todas las tareas",
+    "completed": false,
+    "priority": "high"
+  },
+  {
+    "id": 6,
+    "title": "Implementar POST /tasks",
+    "description": "Crear una nueva tarea con validación",
+    "completed": false,
+    "priority": "high"
+  },
+  {
+    "id": 7,
+    "title": "Agregar logger",
+    "description": "Registrar método y URL de cada petición",
+    "completed": false,
+    "priority": "medium"
+  },
+  {
+    "id": 8,
+    "title": "Probar DELETE /tasks/:id",
+    "description": "Verificar que se elimine una tarea correctamente",
+    "completed": true,
+    "priority": "low"
+  }
+]

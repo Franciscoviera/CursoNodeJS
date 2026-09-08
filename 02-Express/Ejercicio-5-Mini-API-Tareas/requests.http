@@ -1,0 +1,45 @@
+### Obtener todas las tareas
+GET http://localhost:1234/tasks
+
+### Obtener Tareas Completadas
+GET http://localhost:1234/tasks?completed=true
+
+###Obtener Tareas Incompletas
+GET http://localhost:1234/tasks?completed=false
+
+### Obtener Tareas de Prioridad Alta
+GET http://localhost:1234/tasks?priority=high
+
+### Obtebner Tareas de Alta Prioridad Incompletas
+GET http://localhost:1234/tasks?priority=high&completed=false
+
+### Obtener Tarea por Id Valido
+GET http://localhost:1234/tasks/1
+
+### Obtener Tarea por Id Invalido
+GET http://localhost:1234/tasks/9999
+
+### Crear Tarea Valida
+POST http://localhost:1234/tasks
+Content-Type: application/json
+
+{
+    "title": "Nueva Tarea",
+    "description": "Probar POST",
+    "completed": true,
+    "priority": "high"
+}
+
+### Actualizar Tarea
+PUT http://localhost:1234/tasks/1
+Content-Type: application/json
+
+{
+    "title": "Tarea Actualizada",
+    "description": "Probar PUT",
+    "completed": true,
+    "priority": "high"
+}
+
+### Eliminar Tarea por id
+DELETE http://localhost:1234/tasks/2
