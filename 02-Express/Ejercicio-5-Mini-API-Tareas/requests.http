@@ -30,6 +30,16 @@ Content-Type: application/json
     "priority": "high"
 }
 
+### Crear Tarea sin todos los campos obligatorios
+POST http://localhost:1234/tasks
+Content-Type: application/json
+
+{
+    "title": "Nueva Tarea",
+    "description": "Probar POST",
+    "completed": true
+}
+
 ### Actualizar Tarea
 PUT http://localhost:1234/tasks/1
 Content-Type: application/json

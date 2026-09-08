@@ -28,7 +28,7 @@ export const repoTasks = {
 
     async getHighPriorityIncompleted(){
         const tareasAltaPrioridad = await this.getHighPriority()
-        return tareasAltaPrioridad.filter(tarea => tarea.completed === "false")
+        return tareasAltaPrioridad.filter(tarea => tarea.completed === false)
     },
 
     async getById(id){
