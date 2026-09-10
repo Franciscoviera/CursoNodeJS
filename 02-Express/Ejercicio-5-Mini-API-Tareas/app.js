@@ -59,9 +59,11 @@ import express from "express"
 import { taskRouter } from "./routes/taskRoutes.js"
 import { logger } from "./middlewares/logger.js"
 
-export const app = express()
+const app = express()
 app.disable("x-powered-by")
 app.use(express.json())
 app.use(logger)
 
 app.use("/tasks", taskRouter)
+
+export default app
