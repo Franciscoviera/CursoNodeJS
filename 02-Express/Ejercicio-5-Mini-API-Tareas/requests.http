@@ -10,7 +10,7 @@ GET http://localhost:1234/tasks?completed=false
 ### Obtener Tareas de Prioridad Alta
 GET http://localhost:1234/tasks?priority=high
 
-### Obtebner Tareas de Alta Prioridad Incompletas
+### Obtener Tareas de Alta Prioridad Incompletas
 GET http://localhost:1234/tasks?priority=high&completed=false
 
 ### Obtener Tarea por Id Valido

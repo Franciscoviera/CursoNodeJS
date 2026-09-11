@@ -25,6 +25,8 @@ export class TaskController{
 
     static async obtenerTareaPorId(req, res){
         const id = Number(req.params.id)
+        if(Number.isNaN(id))
+            return res.status(400).json({ error: "El id debe ser numerico" })
         const tarea = await tasksService.getTaskById(id)
         if("error" in tarea)
             return res.status(404).json(tarea)
