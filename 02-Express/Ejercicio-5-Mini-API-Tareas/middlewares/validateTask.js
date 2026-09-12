@@ -8,15 +8,17 @@
 
 // con un JSON explicando el problema.
 
+import { taskSchema } from "../schemas/taskSchema.js"
+
 export const validateTask = (req, res, next) => {
-    const tarea = req.body
-    if(!("title" in tarea))
-        return res.status(400).json({ error: "Falta titulo de la tarea"})
-    if(!("description" in tarea))
-        return res.status(400).json({ error: "Falta descripcion de la tarea"})
-    if(!("priority" in tarea))
-        return res.status(400).json({ error: "Falta prioridad de la tarea"})
-    if(!("completed" in tarea))
-        return res.status(400).json({ error: "Falta estado de la tarea"})
+    const resultado = taskSchema.safeParse(req.body)
+
+    if (!resultado.success) {
+        return res.status(400).json(
+            { error: resultado.error.issues.map(issue => issue.message) }
+        )
+    }
+
+    req.body = resultado.data
     next()
 }

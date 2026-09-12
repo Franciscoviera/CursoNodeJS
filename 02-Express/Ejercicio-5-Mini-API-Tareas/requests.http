@@ -58,7 +58,7 @@ DELETE http://localhost:1234/tasks/2
 ### tasks.json puede leerse, pero sus cambios con writeFile() no se garantizan
 ### entre ejecuciones. Para persistencia real se necesita una base de datos.
 
-###en produccion solo funcionan los GET, me sirve para entender como funciona y este tipo de problemas que existen al hacer deploy
+### en produccion solo funcionan los GET, me sirve para entender como funciona y este tipo de problemas que existen al hacer deploy
 POST https://mini-api-tareas.vercel.app/tasks
 Content-Type: application/json
 
